@@ -1,5 +1,5 @@
 Este proyecto tiene por objetivo extender mis conocimientos sobre las configuraciones posibles en web.xml.
-Ademas tiene por objetivo repasar el comportamiento por defecto de la App Engine.
+Ademas tiene por objetivo repasar el comportamiento por defecto.
 
 Alunas paginas con documentacion:
 
