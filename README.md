@@ -1,4 +1,4 @@
-Este proyecto tiene por objetivo extender mis conocimientos sobre las configuraciones posibles sobre web.xml.
+Este proyecto tiene por objetivo extender mis conocimientos sobre las configuraciones posibles en web.xml.
 Ademas tiene por objetivo repasar el comportamiento por defecto de la App Engine.
 
 Alunas paginas con documentacion:
