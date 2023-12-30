@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+    id="WebApp_ID" version="3.1">
+
+    <display-name>direccionWeb</display-name>
+    
+    
+    <!--
+    welcome-file-list se usa para decir a donde ir cuando la url esta destinada a un directorio
+    si no encuentra la primera opcion intenta con la segunda
+    -->
+	<welcome-file-list>
+        <welcome-file>subdirectorio.jsp</welcome-file>
+    </welcome-file-list>
+    
+    
+    <servlet>
+        <servlet-name>inicio-jsp</servlet-name>
+        <jsp-file>/inicio.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>inicio-jsp</servlet-name>
+        <url-pattern>/inicio</url-pattern>
+    </servlet-mapping>
+    
+    
+   <servlet>
+        <servlet-name>secundaria-jsp</servlet-name>
+        <jsp-file>/secundaria.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>secundaria-jsp</servlet-name>
+        <url-pattern>/secu</url-pattern>
+    </servlet-mapping>
+    
+    <!--
+    
+    Observar que no hay una ruta para registro.jsp y aun asi se puede acceder al mismo,
+    esto es asi ya que la app-engine admite la asignacion automatica de direcciones a los jsp que encuantra,
+    le pone como direccion la rusta al mismo.
+   
+    <servlet>
+        <servlet-name>registro-jsp</servlet-name>
+        <jsp-file>/registro.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>registro-jsp</servlet-name>
+        <url-pattern>/registro</url-pattern>
+    </servlet-mapping>
+ 	
+ 	-->
+ 	
+   <filter>
+        <filter-name>filtro1</filter-name>
+        <filter-class>filtros.Primero</filter-class>
+    </filter>
+   	<filter-mapping>
+        <filter-name>filtro1</filter-name>
+        <url-pattern>/secu</url-pattern>
+    </filter-mapping>
+    
+ 	
+ 	
+ 	<!--
+ 	Ademas de poder poner filtros para direcciones especificas (url)
+ 	tambien se puede poner un filtro para un servlet especifico.
+ 	
+ 	-->
+   <filter>
+        <filter-name>filtro2</filter-name>
+        <filter-class>filtros.Segundo</filter-class>
+    </filter>
+ 	<filter-mapping>
+        <filter-name>filtro2</filter-name>
+        <url-pattern>/secu</url-pattern>
+    </filter-mapping>
+ 	
+ 	
+</web-app>
